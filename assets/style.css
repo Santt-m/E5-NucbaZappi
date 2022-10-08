@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600;700;800&display=swap');
 :root {
     --fondo:#131415;
     --card-fondo:#252525;
@@ -9,7 +8,7 @@
     --amarillo:#FFA400;
     --rojo:#FC2933;
     --blanco:#FFFFFF;
-    --gradiente:linear-gradient(90deg, #FFA100 30%, #FB103D 60%);
+    --gradiente: linear-gradient(98.81deg, #FFA100 -0.82%, #FB103D 101.53%);
 
 }
 * {
@@ -19,23 +18,11 @@
     text-decoration: none;
     list-style-type: none;
 }
-/* Testing */
-/* div{
-    border: 1px solid red;
-}
-section{
-    border: 1px solid blue;
-    padding: 5px;
-}
-img{
-    border: 1px solid white;
-} */
 
 /* estilos principales */
 
 body {
   background: var(--fondo);
-  font-family: 'Poppins', sans-serif;
 }
 main{
     display: flex;
@@ -74,8 +61,16 @@ nav ul{
     gap: 50px;
     display: flex;
 }
-
+header a{
+    color: var(--blanco);
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 131.02%;
+}
 /* Imagenes header */
+
 .logo{
     width: 100%;
     height: 100%;
@@ -83,8 +78,8 @@ nav ul{
     max-height: 65px;
 }
 .nav-ico{
-    width: 25px;
-    height: 25px;
+    width: 19px;
+    height: 19px;
 }
 
 /* estilos section principal */
@@ -142,7 +137,7 @@ h3{
     text-align: center;
     letter-spacing: 0.5px;
 
-    background: linear-gradient(98.81deg, #FFA100 -0.82%, #FB103D 101.53%);
+    background: var(--gradiente);
 
     box-shadow: 11px 28px 50px rgba(20, 78, 90, 0.2);
     border-radius: 15px;
@@ -272,7 +267,7 @@ h3{
     align-items: center;
 }
 .card-reco-action a{
-    padding: 5px;
+    padding: 7px 15px 7px 15px;
     background: linear-gradient(98.81deg, #FFA100 -0.82%, #FF005C 101.53%);
     border-radius: 15px;
     color: var(--blanco);
@@ -411,6 +406,7 @@ h3{
     background-clip: text;
 }
 .card-populares-action{
+    padding: 8px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
@@ -471,4 +467,50 @@ footer{
 }
 .footer-div-desarrolladores a{
     color: var(--rojo);
+}
+
+/* Animaciones */
+
+.anim-blur {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 15px;
+}
+
+.anim-blur:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+.anim-blur:hover:before {
+    opacity: 1;
+}
+.anim-blur:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--gradiente);
+    left: 0;
+    top: 0;
+    border-radius: 15px;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
 }
