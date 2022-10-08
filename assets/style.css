@@ -67,7 +67,7 @@ header a{
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
-    line-height: 131.02%;
+    line-height: 130.02%;
 }
 /* Imagenes header */
 
@@ -78,7 +78,7 @@ header a{
     max-height: 65px;
 }
 .nav-ico{
-    width: 19px;
+    width: 16px;
     height: 19px;
 }
 
@@ -86,7 +86,7 @@ header a{
 
 .contenedor-principal{
     margin-top: 15vh;
-    width: 95%;
+    width: 90%;
     height: 50vh;
     
     display: flex;
@@ -139,8 +139,8 @@ h3{
 
     background: var(--gradiente);
 
-    box-shadow: 11px 28px 50px rgba(20, 78, 90, 0.2);
-    border-radius: 15px;
+    box-shadow: 11px 28px 50px #252525(22, 0, 224, 0.2);
+   border-radius: 15px;
 }
 .contenedor-principal-img{
     width: 50%;
@@ -161,6 +161,7 @@ h3{
         top: 50px;
         left: 110px;
 }
+
 
 /* Estilos section Recomendo */
 
@@ -193,8 +194,7 @@ h3{
     height: 103px;
 
     border-radius: 15px;
-
-    display: flex;
+ display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -278,6 +278,7 @@ h3{
 .contenedor-categorias{
     width: 95%;
     margin-top: 20px;
+    cursor: pointer;
 }
 .contenedor-categorias h3{
     font-family: 'Montserrat';
@@ -290,14 +291,20 @@ h3{
 
     /* cards */
 
-.contenedor-card-categorias{
+  .contenedor-card-categorias{
     width: 100%;
-
-    display: flex;
+ display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+   
 }
+
+
+
+
+
+
 .card-categorias{
     width: 147px;
     height: 171px;
@@ -311,7 +318,12 @@ h3{
     align-items: center;
 
     background-color: var(--card-fondo);
+    
+
 }
+
+
+
 .card-categorias p{
     font-family: 'Montserrat';
     font-style: normal;
@@ -514,3 +526,47 @@ footer{
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
+.contenedor-principal-img{
+    transition-property:all ;
+    transition-duration: 1s;
+}
+.contenedor-principal-img:hover{
+    transition-property:all ;
+    transition-duration: 1s;
+    transform: scale(1.2, 1.2 );
+}
+.card-categorias{
+transition-property: all;
+    transition-duration: 1s;
+
+}
+.card-categorias:hover{
+    transition-property: all;
+    transition-duration: 1s;
+    transform: scale(1.2,1.2);
+}
+
+.card-reco-txt{
+    position: relative;
+    padding: 0;
+    }
+    .card-reco-txt h4::after{
+        content: "";
+        height: 2px;
+        width: 100%;
+        background: var(--amarillo);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition:  transform 3.15s ease;
+
+
+    }
+    .card-reco-txt h4:hover::after{
+        transform-origin: bottom left;
+        transform: scaleX(1);
+    }
+
