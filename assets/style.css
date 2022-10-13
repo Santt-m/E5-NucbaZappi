@@ -570,3 +570,35 @@ transition-property: all;
         transform: scaleX(1);
     }
 
+@media( max-width: 992px){
+    .contenedor-principal-img{
+        justify-content: center;
+        align-items: center;
+    max-width:500px;
+    padding: 20px 20px;
+    }
+    h1{
+        font-size:40px ;
+    }
+    .contenedor-principal-txt h2{
+        font-size: 35px;
+    }
+    
+    .contenedor-principal-txt a{
+        font-size: 10px;
+
+    }
+}
+@media (max-width: 523px){
+    .contenedor-principal{
+        align-items: center;
+        margin-top: 80px;
+        font-size:5%;
+    }
+    
+    
+.contenedor-principal-img{
+    
+
+}
+}
