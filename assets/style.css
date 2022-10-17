@@ -8,7 +8,7 @@
     --amarillo:#FFA400;
     --rojo:#FC2933;
     --blanco:#FFFFFF;
-    --gradiente: linear-gradient(98.81deg, #FFA100 -0.82%, #FB103D 101.53%);
+    --gradiente: linear-gradient(98.81deg, #FFA100 -0.82%, #FF005C 101.53%);
 
 }
 * {
@@ -18,6 +18,17 @@
     text-decoration: none;
     list-style-type: none;
 }
+/* Testing */
+/* div{
+    border: 1px solid red;
+}
+section{
+    border: 1px solid blue;
+    padding: 5px;
+}
+img{
+    border: 1px solid white;
+} */
 
 /* estilos principales */
 
@@ -140,7 +151,7 @@ h3{
     background: var(--gradiente);
 
     box-shadow: 11px 28px 50px #252525(22, 0, 224, 0.2);
-   border-radius: 15px;
+    border-radius: 15px;
 }
 .contenedor-principal-img{
     width: 50%;
@@ -161,7 +172,6 @@ h3{
         top: 50px;
         left: 110px;
 }
-
 
 /* Estilos section Recomendo */
 
@@ -194,7 +204,7 @@ h3{
     height: 103px;
 
     border-radius: 15px;
- display: flex;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -253,7 +263,7 @@ h3{
 
     /* linear-primary */
 
-    background: var(--gradiente);
+    background: linear-gradient(98.81deg, #FFA100 -0.82%, #FF005C 101.53%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -291,20 +301,13 @@ h3{
 
     /* cards */
 
-  .contenedor-card-categorias{
+.contenedor-card-categorias{
     width: 100%;
- display: flex;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-   
 }
-
-
-
-
-
-
 .card-categorias{
     width: 147px;
     height: 171px;
@@ -318,12 +321,7 @@ h3{
     align-items: center;
 
     background-color: var(--card-fondo);
-    
-
 }
-
-
-
 .card-categorias p{
     font-family: 'Montserrat';
     font-style: normal;
@@ -491,7 +489,6 @@ footer{
     z-index: 0;
     border-radius: 15px;
 }
-
 .anim-blur:before {
     content: '';
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
@@ -536,6 +533,7 @@ footer{
     transition-duration: 1s;
     transform: scale(1.2, 1.2 );
 }
+
 .card-categorias{
 transition-property: all;
     transition-duration: 1s;
@@ -550,63 +548,82 @@ transition-property: all;
 .card-reco-txt{
     position: relative;
     padding: 0;
-    }
-    .card-reco-txt h4::after{
-        content: "";
-        height: 2px;
-        width: 100%;
-        background: var(--amarillo);
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        transform: scaleX(0);
-        transform-origin: bottom right;
-        transition:  transform 3.15s ease;
+}
+.card-reco-txt h4::after{
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: var(--amarillo);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition:  transform 3.15s ease;
+}
+.card-reco-txt h4:hover::after{
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
 
+/* MediaQueries */
 
-    }
-    .card-reco-txt h4:hover::after{
-        transform-origin: bottom left;
-        transform: scaleX(1);
-    }
-
-@media( max-width: 992px){
+@media( max-width: 1440px){
     .contenedor-principal-img{
         justify-content: center;
         align-items: center;
-    max-width:500px;
-    padding: 20px 20px;
+        max-width:500px;
+        padding: 20px 20px;
     }
     h1{
         font-size:40px ;
     }
     .contenedor-principal-txt h2{
         font-size: 35px;
-    }
-    
+    }    
     .contenedor-principal-txt a{
         font-size: 10px;
-
     }
     .contenedor-card-reco{
         gap: 30px;
     }
+    .contenedor-card-categorias{
+        justify-content: space-evenly;
+        gap:10px
+    }
 }
+
 @media (max-width: 573px){
     .contenedor-principal{
+        height: 80vh;
+        flex-direction: column-reverse;
+        justify-content:space-between;
+    }
+    .contenedor-principal-txt{
+        width: 100%;
+        height: 50%;
         align-items: center;
-        margin-top: 80px;
-        font-size:5%;
-        justify-content: center;
-        gap: 100%;
     }
-    
     .contenedor-principal-img{
-        display: none;
+        width: 100%;
+        height: 10%;
     }
-    
-
-
-    
-
+    .img-pizza1{
+        width: 150px;
+        height: 150px;
+    }
+    .img-pizza2{
+        width: 150px;
+        height: 150px;
+    }
+    .footer-div-soporte{
+        flex-direction: column;
+    }
+    .footer-div-desarrolladores{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
 }
